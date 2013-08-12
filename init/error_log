@@ -1,0 +1,4 @@
+[12-Aug-2013 16:16:47 America/Denver] PHP Fatal error:  Cannot redeclare file_get_html() (previously declared in /home1/twosevtw/public_html/testing/plugins/lib/simple_html_dom.php:65) in /home1/twosevtw/public_html/testing/plugins/lib/simple_html_dom.php on line 80
+[12-Aug-2013 16:17:42 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/twosevtw/public_html/testing/memberimport/index.php on line 32
+[12-Aug-2013 16:19:20 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/twosevtw/public_html/testing/memberimport/index.php on line 32
+[12-Aug-2013 16:19:55 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/twosevtw/public_html/testing/memberimport/index.php on line 32

@@ -1,0 +1,32 @@
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: cols in /home1/twosevtw/public_html/testing/lib/grid.php on line 209
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: order_by in /home1/twosevtw/public_html/testing/lib/grid.php on line 212
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: sort in /home1/twosevtw/public_html/testing/lib/grid.php on line 215
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: nRowsShowing in /home1/twosevtw/public_html/testing/lib/grid.php on line 216
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: page in /home1/twosevtw/public_html/testing/lib/grid.php on line 217
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 460
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 460
+[11-Aug-2013 19:01:57 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home1/twosevtw/public_html/testing/lib/grid.php on line 461
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: maxLength in /home1/twosevtw/public_html/testing/lib/grid.php on line 310
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: cols in /home1/twosevtw/public_html/testing/lib/grid.php on line 328
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: search in /home1/twosevtw/public_html/testing/lib/grid.php on line 358
+[11-Aug-2013 19:01:57 America/Denver] PHP Notice:  Undefined index: pager in /home1/twosevtw/public_html/testing/lib/grid.php on line 378
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_real_escape_string(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 500
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: cols in /home1/twosevtw/public_html/testing/lib/grid.php on line 209
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: order_by in /home1/twosevtw/public_html/testing/lib/grid.php on line 212
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: sort in /home1/twosevtw/public_html/testing/lib/grid.php on line 215
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: nRowsShowing in /home1/twosevtw/public_html/testing/lib/grid.php on line 216
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: page in /home1/twosevtw/public_html/testing/lib/grid.php on line 217
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_query(): Access denied for user 'jcummings'@'localhost' (using password: NO) in /home1/twosevtw/public_html/testing/lib/grid.php on line 460
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_query(): A link to the server could not be established in /home1/twosevtw/public_html/testing/lib/grid.php on line 460
+[11-Aug-2013 19:05:08 America/Denver] PHP Warning:  mysql_fetch_assoc() expects parameter 1 to be resource, boolean given in /home1/twosevtw/public_html/testing/lib/grid.php on line 461
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: maxLength in /home1/twosevtw/public_html/testing/lib/grid.php on line 310
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: cols in /home1/twosevtw/public_html/testing/lib/grid.php on line 328
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: search in /home1/twosevtw/public_html/testing/lib/grid.php on line 358
+[11-Aug-2013 19:05:08 America/Denver] PHP Notice:  Undefined index: pager in /home1/twosevtw/public_html/testing/lib/grid.php on line 378

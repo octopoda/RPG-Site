@@ -1,0 +1,42 @@
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+
+
+@media (min-width: 804px) and (max-width: 1050px) {
+
+  // Fixed grid
+  @include grid-core($gridColumnWidth768, $gridGutterWidth768);
+
+  // Fluid grid
+  @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+
+  // Input grid
+  @include grid-input($gridColumnWidth768, $gridGutterWidth768);
+
+  // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
+  .navCol { width:30%; float:left; background:$green; }
+  .bodyCol { background:$white; width:70%; float:left; position:relative;}
+
+  .form-search {
+     button {margin-top:10px !important;}
+  }
+
+  .archives {
+    h1 {float:none;}
+    .archive-search {clear:both; margin-top:10px; width:100%; float:none; position:inherit; margin-left:10px; width:60%;}
+  }
+
+  .price-cell {
+    h3 {border:none; font-size:13px !important;}
+    h5 {font-size:$baseFontSize*1.8;}
+  }
+
+  .socialButtons {
+     ul {
+       li { margin-right:8px !important;}
+     }
+    }
+
+}

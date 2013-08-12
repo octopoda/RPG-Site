@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<nodes>
+<map>
+    <!-- Orders -->
+    <Order
+    Transaction_Id="transaction_id"
+    CC_Authorization_Id="authorization_id"
+    UserID="user_id"
+    Sales_Tax="sales_tax"
+    Status="status"
+    Tracking_Number="tracking_number"
+    TotalPrice="totalPrice"
+    Sale_Date="sale_date"
+    Card_Type="card_type"
+    Account_Number="account_number"
+    Voided="voided" />
+
+    <!-- Purchase For Users  -->
+     <Purchase
+    purchase_id="purchase_id"
+    product_id="product_id"
+    user_id="user_id"
+    transaction_id="transaction_id"
+    quantity="quantity"
+    downloads="downloads"
+    item_price="order_price"
+    status="status" />
+
+    <!-- Products -->
+    <Product
+    ProdId="product_id"
+    ProdName="product_name"
+    M_Price="M_price"
+    NM_Price="NM_price"
+    I_Price="I_price"
+    Shippable="shipping"
+    ExternalLink=""
+    OutOfStock="out_of_stock"
+    ProductTypeId="type"
+    ProductType="category_name"
+    PDFDownloadLink="download"
+    VideoDownloadLink="external"
+    QuantityField="quantity"
+    Content="content" />
+
+
+    <!-- Users -->
+    <User
+    UserID="user_id"
+    FirstName="first"
+    LastName="last"
+    Email="email"
+    Phone="phone"
+    BillingAddress1="billing_address"
+    BillingAddress2="billing_address2"
+    BillingCity="billing_city"
+    BillingState="billing_state"
+    BillingZipCode="billing_zip"
+    BillingCountry=""
+    ShippingAddress1="shipping_address"
+    ShippingAddress2="shipping_address2"
+    ShippingCity="shipping_city"
+    ShippingState="shipping_state"
+    ShippingZipCode="shipping_zip"
+    ShippingCountry="" />
+</map>
+</nodes>

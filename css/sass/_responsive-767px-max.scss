@@ -1,0 +1,509 @@
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+
+
+@media (max-width: 804px) {
+
+  // Padding to set content in a bit
+  body {
+    width:100%;
+    box-sizing:border-box;
+  }
+  // Negative indent the now static "fixed" navbar
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  // Remove padding on container given explicit padding set on body
+  .container-fluid {
+    padding: 0;
+  }
+
+
+
+  // TYPOGRAPHY
+  // ----------
+  // Reset horizontal dl
+  .dl-horizontal {
+    dt {
+      float: none;
+      clear: none;
+      width: auto;
+      text-align: left;
+    }
+    dd {
+      margin-left: 0;
+    }
+  }
+
+  // GRID & CONTAINERS
+  // -----------------
+  // Remove width from containers
+  .container {
+    width: auto;
+    margin:0;
+    padding:0;
+    border:1px solid black;
+  }
+  // Fluid rows
+  .row-fluid {
+    width: 100%;
+  }
+  // Undo negative margin on rows and thumbnails
+  .row,
+  .thumbnails {
+    margin-left: 0;
+  }
+  .thumbnails > li {
+    float: none;
+    margin-left: 0; // Reset the default margin for all li elements when no .span* classes are present
+  }
+  // Make all grid-sized elements block level again
+  [class*="span"],
+  .uneditable-input[class*="span"], // Makes uneditable inputs full-width when using grid sizing
+  .row-fluid [class*="span"] {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    @include box-sizing(border-box);
+  }
+  .span12,
+  .row-fluid .span12 {
+    width: 100%;
+    @include box-sizing(border-box);
+  }
+  .row-fluid [class*="offset"]:first-child {
+    margin-left: 0;
+  }
+
+  // FORM FIELDS
+  // -----------
+
+
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+     -webkit-appearance: none; -moz-appearance: none;
+    background:$grayLighter !important;
+    border:1px solid $gray;
+    box-shadow:none;
+    padding:15px;
+    height:$baseLineHeight*2;
+    font-size:$baseFontSize*1;
+    color:$black;
+  }
+
+
+
+  // Make span* classes full width
+  .input-large,
+  .input-xlarge,
+  .input-xxlarge,
+  input[class*="span"],
+  select[class*="span"],
+  textarea[class*="span"],
+  .uneditable-input {
+    @include input-block-level();
+    border:1px solid $gray !important;
+
+  }
+  // But don't let it screw up prepend/append inputs
+  .input-prepend input,
+  .input-append input,
+  .input-prepend input[class*="span"],
+  .input-append input[class*="span"] {
+    display: inline-block; // redeclare so they don't wrap to new lines
+    width: auto;
+  }
+  .controls-row [class*="span"] + [class*="span"] {
+    margin-left: 0;
+  }
+
+  // Modals
+  .modal {
+    position: fixed;
+    top:   20px;
+    left:  20px;
+    right: 20px;
+    width: auto;
+    margin: 0;
+    &.fade  { top: -100px; }
+    &.fade.in { top: 20px; }
+  }
+
+
+  /* Site Specific Styles */
+  .navCol {position:fixed; top:0; width:40%; z-index:$zindexModal; left:-40%;}
+  .bodyCol {width:100%;}
+  .popupLogin, .popupShoppingCart {position:fixed; top:0; width:100% !important; z-index:$zindexModal+2; left:-40% !important;}
+
+  .nav-open {
+    .inner-wrapper {left:0%; @include translate3d(40%, 0, 0);  @include transformTransition(1s ease); }
+   //.popupLogin {left:0%; left:0%; @include translate3d(40%, 0, 0);}
+  }
+
+  //Form Search
+  .form-search {
+    input {width:88% !important; height:0px;}
+    button { margin-top:10px !important;}
+  }
+
+
+  .hidden-navbar {background:$green !important; min-height:40px;  padding:10px 20px 10px 0;
+    .nav-button {background:darken($green, 10%); padding:10px;  font-size:20px; font-weight:bold; margin-top:-10px; color:$white;}
+    .mobile-logo {font-size:30px; color:$white; }
+  }
+
+  /* Front Page Tabs */
+  .fpTabs {height:auto;
+    article { margin:0; width:11.3%;
+      @include transition(height 1s);
+      .hero-wrapper {width:90%;
+        h1 {font-size:40px;}
+      }
+      &.active {width:77%;}
+    }
+  }
+  .fpEvents {width:100%; @include clearfix();}
+
+  .front-events {margin:0;}
+
+  .sidebar {
+    section {width:45%; float:left; height:100%;}
+  }
+
+  .small-header {height:auto; min-height:100px;
+    article {
+      &.hero-unit {background:none; padding:0;}
+      .hero-wrapper {background:transparent; color:$white; padding-top:0;
+          h1 {margin:0; padding:30px 5px 0 20px; line-height:1.2em; font-size:30px;}
+      }
+    }
+  }
+
+
+  //Store
+  .front-product h1 {font-size:40px; line-height:1.2em;}
+  .store-nav {padding:0; margin-bottom:-10px;
+    ul  { margin-left:0;
+      li {line-height:1.2em; font-size:inherit; width:auto; border:none; padding-left:auto;
+        &.nav-header {margin-left:0px; border:none; padding:0; cursor:inherit;
+          &:hover  {background:none;}
+        }
+        &:last-child {border:none;}
+        &:hover {background:inherit;}
+      }
+    }
+  }
+
+  .store-body { margin-top:0px;}
+
+  .store-header {margin-top:10px;}
+
+
+  .archives {
+    h1 {float:none;}
+    .archive-search {clear:both; margin-top:10px; width:100%; float:none; position:inherit; margin-left:10px; width:60%;}
+  }
+  .archive-menu {width:20% !important; }
+  .archive-content {width:80% !important;}
+
+  .side-button {
+    .span2 {width:10%; float:left; margin-right:10px; }
+    .fix {left:0; overflow:scroll; -webkit-touch-callout:none;}
+    .span10 {width:80%;}
+  }
+
+  //Popups
+  .popupLogin {left:0;  width:100%;
+  }
+  .popupShoppingCart { display:none; border-bottom:20px solid $gray; position:fixed; z-index:$zindexModal; background:darken($white, 10%); @include box-shadow(0 1px 20px 0px rgba(0,0,0,0.5)); padding-left:30px; padding-bottom:30px;
+}
+
+
+} //End @media
+
+
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+
+  // Smooth out the collapsing/expanding nav
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0); // activate the GPU
+  }
+
+  img {width:100%; margin:10px 0; padding:0; clear:both;}
+
+  // Block level the page header small tag for readability
+  .page-header h1 small {
+    display: block;
+    line-height: $baseLineHeight;
+  }
+
+  // Update checkboxes for iOS
+  input[type="checkbox"],
+  input[type="radio"] {
+    border: 1px solid #ccc;
+  }
+
+  // Remove the horizontal form styles
+  .form-horizontal {
+    .control-label {
+      float: none;
+      width: auto;
+      padding-top: 0;
+      text-align: left;
+    }
+    // Move over all input controls and content
+    .controls {
+      margin-left: 0;
+    }
+    // Move the options list down to align with labels
+    .control-list {
+      padding-top: 0; // has to be padding because margin collaspes
+    }
+    // Move over buttons in .form-actions to align with .controls
+    .form-actions {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  // Medias
+  // Reset float and spacing to stack
+  .media .pull-left,
+  .media .pull-right  {
+    float: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+  // Remove side margins since we stack instead of indent
+  .media-object {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  // Modals
+  .modal {
+    top:   10px;
+    left:  10px;
+    right: 10px;
+  }
+  .modal-header .close {
+    padding: 10px;
+    margin: -10px;
+  }
+
+  // Carousel
+  .carousel-caption {
+    position: static;
+  }
+
+
+  .navCol {position:fixed; top:0; width:80%; z-index:$zindexModal; left:-80%;}
+
+  .popupLogin, .popupShoppingCart {width:100% !important; z-index:$zindexModal+2; left:-80% !important;}
+
+   .nav-open {
+    .inner-wrapper {left:0%; @include translate3d(80%, 0, 0);  @include transformTransition(1s ease); }
+  }
+
+  h3 {line-height:34px;}
+
+ //Form Search
+  .form-search {
+    //input {width:88% !important; height:0px;}
+    button { margin-top:-40px !important;}
+  }
+
+
+  .fpTabs {height:auto;
+    article {width:100%; height:15%; margin:0;
+      @include transition(height 1s);
+      .hero-wrapper {width:90%;
+        h1 {font-size:40px;}
+      }
+      &.active {width:100%;}
+    }
+  }
+
+
+  .front-event {width:100%; height:auto;}
+  .sidebar {
+    section {float:none; width:100%;}
+  }
+
+  .image-grid { margin:auto;
+    .image {width:100%; float:none;}
+  }
+
+
+  //Store
+  .front-product h1 {font-size:30px; line-height:1.2em;}
+  .store-body {
+    article:nth-child(odd) {background:$grayLighter;}
+    .span3 {width:100%; float:none;}
+  }
+
+
+  /* Product Table CSSP */
+  .product-table {width:90%;
+    article {padding:20px; }
+    aside {position:inherit; right:0; top:0; width:100%;}
+
+    .non-members {background: darken($green, 3%);
+      h3 {background:darken($green, 10%);}
+    }
+    .members {background:darken($purple, 3%);
+      h3 {background:darken($purple, 10%);}
+    }
+    .institutional {background:darken($blue, 3%);
+      h3 {background:darken($blue, 10%);}
+    }
+
+    .price-cell {@include clearfix;padding:10px auto; position:relative;
+      h3 {border:none; font-size:16px; color:$white; width:100%; margin:0; padding:0; padding-left:10px; text-transform:uppercase;}
+      h5 {border:none; color:$white; font-family:$altFontFamily; font-size:$baseFontSize*2.2; font-weight:100; padding-left:10px; padding:10px;}
+
+      .add-to-cart {opacity:0; font-family:$altFontFamily; font-weight:100; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255, 0.9) !important; text-align:center; font-size:$baseFontSize*1.5; color:$black; line-height:4.5em; @include transition(1s opacity); }
+
+      &:hover {
+        .add-to-cart {opacity:1;}
+      }
+    }
+  }
+
+
+  .order-title {font-size:30px; line-height:32px; margin-bottom:20px;}
+
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+    width:100%;
+  }
+
+
+  //Footer
+  footer {
+    .row-fluid:first-child {text-align:center; padding:40px 20px;}
+    .socialButtons {float:none; width:100%; margin-top:40px;
+      ul {float:none; margin:0;
+        li {margin-right:8px;}
+      }
+    }
+  }
+
+ table {width:100%; display:block; background:none;
+      thead, tbody, tr, td {display:block;}
+      thead tr {position:absolute; left:-10000px; top:-10000px;}
+
+
+      tbody {
+          tr {margin-top:40px;}
+          td {border:none; border-bottom:1px solid $black; position:relative; padding-left:50%; background:$grayLighter;
+              &:before {width:45%; padding-right:10px; white-space:nowrap; color:$blue; vertical-align: bottom; text-align: left;}
+              &:first-child {font-weight:normal;}
+          }
+      }
+  }
+
+
+  .shopping-cart {width:auto; background:none; margin-bottom:auto;
+    .top-border td {border-top:none; padding:auto;}
+    .product-name {width:auto; padding:0; font-size:16px;}
+    .productQuantity {width:40px; position:relative; top:20px;}
+
+    .no-background td {background:none !important;}
+    .remove {width:auto;
+      span {display:block; width:auto; margin:auto; color:$red;}
+    }
+  }
+
+small {display:block;}
+.my-account {
+  ul {margin:0;
+    li {margin:0; width:100%;}
+  }
+}
+
+.my-account-product { margin-bottom:30px !important;
+  h3 {line-height:25px; padding-bottom:20px; }
+  ul li {display:block; width:100% !important;}
+}
+
+
+
+  .store-body {@include content-columns(1, 0px);}
+
+
+  //Tables
+  .board-contact-table {
+      td:nth-of-type(1):before {content: "Position:";}
+      td:nth-of-type(2):before {content: "Name:";}
+      td:nth-of-type(3):before {content: "Email:";}
+  }
+
+  .cpeu-table {
+      td:nth-of-type(1):before {content: "Publication Title:";}
+      td:nth-of-type(2):before {content: "Expires On:";}
+      td:nth-of-type(3):before {content: "Take Quiz:";}
+  }
+
+
+  .shopping-cart {
+      td {border:none; background:none;
+      }
+      td:nth-of-type(1):before {content: "Product Name:";}
+      td:nth-of-type(2):before {content: "Quantity:";}
+      td:nth-of-type(3):before {content: "Price:";}
+  }
+
+  .total-table {
+      td:nth-of-type(1) {padding:10px 0; width:100%; text-align:center !important; background:$blue; color:$white; }
+  }
+
+  .side-button {
+    .span2 {width:15% !important; overflow:scroll; height:100%;}
+    .span10 {width:60% !important; margin-left:10% !important;}
+  }
+
+
+
+
+
+}
+
+

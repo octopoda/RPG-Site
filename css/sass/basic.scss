@@ -1,0 +1,552 @@
+@import 'base';
+@import 'bootstrap.scss';
+
+html * {
+  @include box-sizing(border-box);
+}
+
+html, body {height:100%; background:#eee;}
+
+
+
+/* Body */
+
+
+//Grid changes
+.outer-wrapper {margin-left:0; max-width:1300px; margin:0; padding:0; overflow:hidden; width:100%; }
+.inner-wrapper { margin:0; padding:0; @include box-shadow(-10px 20px 10px -5px rgba(0,0,0,0.5)); }
+
+
+.navCol { width:20%; float:left; background:$green; @include transition(1s width ease); }
+.bodyCol { background:$white; width:80%; float:left; position:relative; @include transition(1s width ease); }
+
+//Disabled Modal
+.disabled .bodyCol {
+   filter: blur(5px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+}
+
+
+.modal-remove {color:$red; position:absolute; right:-5px; top:-5px; font-size:26px;
+  &:hover {color:darken($red, 10%);}
+}
+
+
+.main-body {padding:20px;}
+
+//Nav Footer
+  .copyright {font-size:10px; color:$grayLighter;}
+
+
+.ir {@include ir;}
+a:hover {text-decoration:none;}
+
+.dev-button {display:block; position:fixed; bottom:0; right:0; background:rgba(0,0,0,0.5); color:$white; padding:5px; }
+
+
+
+.main-navigation {
+
+  height:100%;
+  background:$green;
+  border-right:10px solid rgba(0,0,0,0.2);
+  overflow:visible;
+  //Logo
+  hgroup {width:80%; margin:-20px auto 10px auto;
+    .sprites-logo {@include ir;}
+  }
+
+  //Nav Pieces
+  nav ul { margin:0; width:100%; margin-top:20px;
+
+    li { list-style:none; clear:left; border-bottom:1px solid rgba(255, 255, 255, 0.2);
+
+      &:first-child {border-top:1px solid rgba(255,255,255, 0.2);}
+      a {display:block; margin-left:40px; color:$white; padding:10px;}
+
+      .navLeft { padding:9px; display:block; float:left; border-right:1px solid rgba(255,255,255, 0.2);
+        .sprites-nav_caret_on {display:block;}
+      }
+
+      //Navigation Hover
+      &:hover {background:$white; border:none;
+        a {color:$darkGreen; text-decoration:none;
+          &:hover {color:$darkGreen;};
+        }
+        .navLeft { background-color:$white;
+          .sprites-nav_caret_on {
+            background-position: -50px 0;
+            background-attachment: cover;
+          }
+        }
+      }
+
+    }
+  }
+
+  .quickNav { background:darken($green, 10%); @include clearfix; @include box-shadow(inset 5px 0 10px -2px rgba(0,0,0,0.4));
+        ul { width:100%; text-align:left; padding:0; margin:0;
+          li {width:auto; border:none; display:inline-block; clear:none; border-right:1px solid $darkGreen; border-left:1px solid darken($green, 5%); padding:5px 3px;
+            &:first-child {border-left:none;}
+            a {margin:0;
+                &:hover {color:$white !important;}
+            }
+            &:hover {background:$darkGreen; color:$white;}
+            &.black-ink a {margin-left:-8px; margin-right:10px;}
+            .openCart {font-size:$baseFontSize; display:inline-block;
+              &:hover {color:$white;}
+            }
+        }
+    }
+  }
+
+
+  //Form Search
+  .form-search { margin:0; padding:0; margin-top:30px; position:relative;
+    input {width:90%;}
+    button {background:none; color:$blue; position:absolute; right:10px; margin-top:-40px; font-size:26px;
+      &:hover {color:darken($blue, 40%);}
+    }
+
+  }
+
+}
+
+
+
+//Autocomplete
+.ac_results {background:$white;
+  ul {margin:0; padding:0;}
+  .ac_even {background:$grayLighter;}
+  li {border:1px solid $gray; margin:0; padding:0; padding:5px;}
+}
+
+
+
+
+/* Popups */
+
+
+.popupLogin {position:fixed;  top:0; left:40%; display:none; width:400px; margin:auto; height:0px; z-index:$zindexModal; background:$white; padding:20px; @include box-shadow(0 0 10px 2px $black);
+  .icon-remove-sign {float:right; font-size:30px;}
+}
+.popupShoppingCart { display:none; border-bottom:20px solid $gray; position:fixed; z-index:$zindexModal; background:darken($white, 10%); @include box-shadow(0 1px 20px 0px rgba(0,0,0,0.5)); padding-left:30px; padding-bottom:30px;
+}
+
+
+
+/* Front Page Tabs */
+.fpTabs {height:350px; @include clearfix; overflow:hidden; border-bottom:15px solid darken($white, 11%);
+  .container {padding:0; margin:0;}
+  article {height:350px; margin-right:3px; width:11.7%; float:left; background:$blue; position:relative; cursor:pointer;
+
+    @include transition(width 1s);
+    &.hero-unit {padding:0;}
+    .hero-wrapper {width:60%; height:100%; margin:auto; padding:30px;  opacity:0; background:none;
+      @include transition(opacity 1s);
+      @include transition-delay(1s);
+      h1 {font-size:50px;}
+      h1, p, a {display:none;}
+    }
+    .number {font-size:100px; color:#FFF; font-family:$serifFontFamily; position:absolute; right:0; bottom:25px; font-weight:100;}
+
+    &.active {width:75%; background:$purple;
+        .number {display:none;}
+        .hero-wrapper {  opacity:1; background:rgba(255,255,255, 0.5);
+            h1, p, a {display:block;}
+            a {width:80%;}
+            h1 {margin-top:-20px;}
+        }
+    }
+    &:hover {background:lighten($blue, 20%);}
+  }
+}
+
+/* Site Headers */
+
+.site-header {border-bottom:15px solid darken($white, 11%); @include clearfix; width:100%; overflow:hidden; margin-bottom:20px;}
+.small-header {height:auto; min-height:100px;
+  article {
+    &.hero-unit {background:none; padding:0;}
+    .hero-wrapper {background:transparent; color:$white; padding-top:0;
+        h1 {margin:0; padding:30px 5px 0 20px; line-height:1em; font-size:$baseFontSize*2.5;}
+    }
+  }
+}
+
+.front-product { background:$blue; padding-bottom:30px;
+  article {min-height:340px; width:70%; margin:auto;
+    &.hero-unit {padding:0; background:none;}
+    .hero-wrapper {background:transparent; color:$white;
+      a {margin-top:20px;}
+    }
+  }
+}
+
+//Archive Header
+.archive-header {background:$purple;}
+.store-header {background:$yellow;}
+.calendar-header {background:$blue;}
+.account-header {background:$purple;}
+
+
+
+
+/* Sidebar */
+
+.sidebar {
+  section {margin-top:40px; box-sizing:border-box;}
+}
+
+.memberBenefit { position:relative;
+  h3 {position: absolute; top:140px;}
+  a {display:block;}
+}
+
+.homeContent {padding-top:40px;}
+
+.front-page-ad {padding-top:40px;}
+
+.fake-ad {background:$yellow; min-height:180px; padding:30px 10px 0 10px; border-bottom:8px solid darken($yellow, 5%);
+  a:link {color:$white; font-size:$baseFontSize*4; font-family:$serifFontFamily; display:block; line-height:$baseLineHeight*2.4; }
+  p{margin:0; color:$white;  margin-left:5px; margin-top:10px;}
+}
+
+
+/* Content  */
+//Accordian
+.accordion-group {border:none;}
+.accordion-heading {color:$green; cursor:pointer; border-bottom:1px solid $green; padding-bottom:5px; margin-top:30px; font-size:$baseFontSize*1.2; }
+
+//Image Grids
+.image-grid { clear:both; @include clearfix;
+  .image {display:inline-block; position:relative;
+    h4 {background:rgba(255,255,255, 0.8);  position:absolute; bottom:0; color:$black; font-size:30px; line-height:32px; padding:10px; width:100%;}
+  }
+}
+
+
+
+
+//Overflow Scroll and fixed scrolling
+.overflow-scroll {height:700px; overflow:scroll; }
+
+.fix {position:fixed; top:0;}
+.fixSibling {padding-left:10%;}
+
+.side-button {
+  .span2 {width:10% !important;}
+  .fix {max-width:50px !important;}
+  .span10 {width:85% !important;}
+}
+
+
+
+/* Product Table CSSP */
+.product-table { position:relative; width:80%; margin:auto;
+  article {padding:20px; padding-right:40%; @include box-shadow(0 0px 10px rgba(0,0,0,0.2));}
+  aside {position:absolute; right:-10px; top:20px; width:30%; background:lighten($grayLighter, 3%);}
+
+  .non-members {background: darken($green, 3%);
+    h3 {background:darken($green, 10%);}
+  }
+  .members {background:darken($purple, 3%);
+    h3 {background:darken($purple, 10%);}
+  }
+  .institutional {background:darken($blue, 3%);
+    h3 {background:darken($blue, 10%);}
+  }
+
+  .price-cell {@include clearfix;padding:10px auto; position:relative;
+    h3 {border:none; font-size:16px; color:$white; width:100%; margin:0; padding:0; padding-left:10px; text-transform:uppercase;}
+    h5 {border:none; color:$white; font-family:$altFontFamily; font-size:$baseFontSize*2.2; font-weight:100; padding-left:10px; padding:10px;}
+
+    .add-to-cart {opacity:0; font-family:$altFontFamily; font-weight:100; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255, 0.9) !important; text-align:center; font-size:$baseFontSize*1.5; color:$black; line-height:4.5em; @include transition(1s opacity); }
+    .add-to-cart.item-added {opacity:1;}
+    &:hover {
+      .add-to-cart {opacity:1;}
+
+    }
+  }
+}
+
+
+
+
+
+
+.product-sidebar { width:80%; background:none;
+
+  tr {margin-bottom:20px;}
+  td {text-align:center; color:$white; min-height:200px; position:relative; height:100%; background:none;}
+
+  .add-to-cart {display:block; position:absolute; bottom:0; width:100%; text-transform:uppercase; font-size:$baseFontSize*0.7; color:$white; cursor:pointer
+    &.disabled {cursor:inherit; color:$grayLight;}
+  }
+
+  .title {position:absolute; top:0; width:100%; color:$white; text-transform:uppercase; font-size:$baseFontSize*0.7;}
+  .price-cell {color:$white; position:relative; height:100%; height:100px; }
+  .price {font-size:$baseFontSize * 2.2;  width:100%; font-family:$altFontFamily; font-weight:100;  margin:auto; position:absolute; top:50%;  height:100px; margin-top:-10px;}
+  .spacer {height:20px;}
+
+
+  .non-members {background: darken($green, 3%);}
+  .non-members-text {background: $green;
+    .add-to-cart:hover {background:lighten($green, 20%);}
+  }
+
+
+  .members {background:darken($purple, 3%); }
+  .members-text {background:$purple;
+    .add-to-cart:hover {background:lighten($purple, 20%);}
+   }
+
+  .institutional {background:darken($blue, 3%);}
+  .institutional-text {background:$blue;
+    .add-to-cart:hover {background:lighten($blue, 20%);}
+  }
+
+}
+
+
+
+
+
+
+
+/* Events */
+.front-event {@include square(45%); height:200px; float:left; background:$purple; box-sizing:border-box; margin:10px; position:relative;
+  .front-event-title {font-size:$baseFontSize *1.4; color:lighten($purple, 50%); line-height:$baseLineHeight *1.2; margin:0; padding:10px; text-align:center;}
+  .front-event-date { color:$white; font-size:$baseFontSize; text-align:center; width:100%; padding:20px; box-sizing:border-box;}
+  .btn {width:100%; background:darken($purple, 10%); box-sizing:border-box; position:absolute; bottom:0;}
+}
+
+
+/* Archives */
+.archives {width:90% !important; margin:auto; @include clearfix;
+    h1 {color:$darkBlue; float:left;}
+    header {clear:both; @include clearfix; position:relative; }
+    //Archive Search
+    .archive-search {float:right; position:absolute; bottom:0; right:10px;
+      .icon-search {padding:0px 13px; height:50px;}
+    }
+    .archive-app {clear:both;  @include clearfix; padding:0; margin:0;
+        background-color: lighten($lightBlue, 10%); // Old browsers
+        @include filter-gradient($blue, lighten($lightBlue, 10%), horizontal); // IE6-9
+        @include background-image(linear-gradient(left,  $blue 15%, lighten($lightBlue, 10%) 15%));
+    }
+
+    .tabbable {position:relative;}
+    .nav {margin-bottom:0 !important;}
+    .nav-tabs {background:$darkBlue; border:none; border-bottom:2px solid lighten($darkBlue, 10%); height:$navbarHeight;
+      a {color:$white; border:none; padding-bottom:14px; font-size:12px; font-family:$serifFontFamily;
+        &:hover {background:lighten($darkBlue, 5%); border:none;};
+      }
+      .active {
+        a {background:$blue; border:none;}
+      }
+    }
+    .tab-content {background:$blue; padding-left:0; overflow:scroll; width:100%;
+      ul {padding:0; margin:0;
+        li {color:$white; list-style:none;  border-top:1px solid lighten($blue, 5%); border-bottom:2px solid darken($blue, 5%); cursor:pointer;
+          a {color:$white; padding:10px; display:block;
+            &:hover {text-decoration:none;}
+          }
+          ul {display:none;
+             li {border:none; //padding-left:20px;
+                a {padding:3px;}
+                &:hover {background:$white;
+                  a {color:$darkBlue;}
+                }
+             }
+          }
+        }
+      }
+
+    }
+
+  //archive-menu
+    .archive-menu {width:15%; float:left; background:$blue; }
+
+
+    //archive content
+    .archive-content { width:85%; float:left;  position:relative;
+      .archive-header {height:$navbarHeight; background:$darkBlue; border-bottom:2px solid lighten($darkBlue, 10%);
+          .brand {
+            float: left;
+            display: block;
+            // Vertically center the text given $navbarHeight
+            padding: (($navbarHeight - $baseLineHeight) / 2) 20px (($navbarHeight - $baseLineHeight) / 2);
+            margin-left: -10px; // negative indent to left-align the text down the page
+            font-size: 24px;
+            font-weight: 100;
+            color: $white;
+            font-family:$serifFontFamily;
+            &:hover,
+            &:focus {
+              text-decoration: none;
+            }
+          }
+          .archive-icons { float:right; padding: (($navbarHeight - $baseLineHeight) / 2) 20px (($navbarHeight - $baseLineHeight) / 2);
+              li { display:inline-block; margin-right:10px;
+                a {color:$white;}
+              }
+          }
+      }
+
+     .archive-volume {padding:0 20px; box-sizing:border-box;}
+
+      .archive-article {padding:0 20px; box-sizing:border-box; margin-top:20px;
+          h4 a {color:$darkBlue;}
+          article {border-bottom:1px solid darken($lightBlue, 10%); margin-bottom:40px;
+            &:last-child  {border-bottom:none; margin-bottom:none;}
+          }
+      }
+    }
+  }
+
+
+  //Store
+  .store-nav {margin-bottom:-10px; padding-top:20px;
+    ul  { margin-left:-20px;
+      li {line-height:1.8em; font-size:16px; width:100%; border-bottom:1px solid $grayLighter; padding-left:30px; cursor:pointer;
+        &.nav-header {margin-left:-10px; border:none; padding:0; cursor:inherit;
+          &:hover  {background:none;}
+        }
+        &:last-child {border:none;}
+        &:hover {background:$green;}
+      }
+    }
+  }
+
+  .store-body {padding:0; margin-top:-20px; @include content-columns(3, 1px);
+    article{ padding:40px 20px; height:100%; display:inline-block; border:1px solid $grayLighter; width:100%;
+      h4 {font-size:20px; line-height:1.2em;}
+      a {margin-top:20px;}
+
+      &:nth-child(odd) {background:lighten($grayLighter, 3%);}
+    }
+  }
+
+
+
+
+
+
+  .store-sidebar {box-sizing:border-box;}
+
+  .shopping-cart-nav {background:rgba(0,0,0, 0.7);  border:1px solid black; @include clearfix; position:fixed; top:10px; float:right; width:120px;
+    ul {padding-top:10px;
+      li {color:$white; display:inline-block; margin-right:10px; padding:0;
+        a {color:$white;}
+      }
+    }
+  }
+
+
+  .shopping-cart {width:90%; background:none; margin-bottom:30px;
+    .top-border td {border-top:1px solid black; padding-top:20px;}
+    .product-name {width:70%; padding-left:40px; font-size:16px;}
+    .productQuantity {width:40px;}
+
+    .remove {width:5%;
+      span {display:block; width:50%; margin:auto; color:$red;}
+    }
+  }
+
+  .total-table { width:90%; background:none; font-size:$baseFontSize*1.3;
+    .totalTitle {text-align:right !important; font-weight:bold; width:70%; padding-right:7%;}
+  }
+
+  .full-cart {
+    h1 {margin-top:0; padding-top:0; margin-bottom:20px;}
+  }
+
+  .my-account {
+    h1 {padding-top:0; margin-bottom:50px;}
+    ul { margin-left:30px;
+      li {margin-bottom:50px; width:80%;}
+    }
+
+
+    .transactions-line {margin-left:0px; border-top:1px solid $grayLight; border-bottom:1px solid $grayLight; @include clearfix;
+      li {margin-bottom:0; display:inline-block; color:$grayLight;  float:left; width:30%; padding:5px 0;}
+    }
+
+  }
+
+  .cards { overflow: hidden; margin-left:0;
+      li { @include transition(all 0.2s); background-image: url(../images/card_logos.jpg); background-position: 0 0; height: 32px; text-indent: -9999px; width: 51px; margin:10px 0px; list-style:none; display:inline-block;}
+
+      .visa {
+        &.off {background-position: 0 32px;}
+      }
+
+      .mastercard {background-position: 102px 0;
+        &.off {background-position: 102px 32px;}
+      }
+
+      .amex {background-position: 153px 0;
+        &.off {background-position: 153px 32px;}
+      }
+
+      .discover { background-position: 50px 0;
+        &.off {background-position: 50px 32px;}
+      }
+    }
+
+
+.expire-select {width:80px;}
+.state-select {width:200px;}
+.shipping {display:none;}
+.checkout-button {margin-top:50px;}
+
+
+//Video and download
+.video-row {margin:auto; width:80%;}
+
+
+.my-account-product {position:relative; background:lighten($grayLighter, 3%); @include box-shadow(0 0 3px rgba(0,0,0,0.3)); padding:20px;
+  h3 {margin:0; padding:0; margin-top:10px; font-size:18px;}
+  .btn {position:absolute; right:-5px; top:-10px;}
+}
+
+.hasError {border:1px solid $red !important;}
+.validationError {background:$red; color:$white; padding:5px; }
+/* Footer */
+
+footer { background:lighten($white, 10%);  border-top:1px solid #eee; @include box-shadow(-2px 0, 10px, darken($white, 40%)); margin-top:40px;
+  .row-fluid { padding:50px; width:100%; box-sizing:border-box; margin-left:0;
+    &:first-child {text-align:center; padding:50px 120px;
+      p {text-align:center;}
+      .sprites-color_logo {margin:auto; margin-bottom:20px;}
+    }
+  }
+  .dark-footer {background:$gray; color:#FFF;
+    dl { clear:both;
+      dt {color:$grayLight; float:left;}
+      dd {float:left;}
+    }
+    a:link, a:visited {color:$blue;}
+    a:hover, a:active {color:$lightBlue; text-decoration:none;};
+  }
+
+
+  .footer-double dd {margin-right:20px;}
+  address {padding:0; margin:0;}
+
+  .socialButtons {
+     ul {float:right;
+       li { list-style:none; display:inline-block; float:left; margin-right:15px;}
+     }
+
+  }
+}
+
+
+
+
+

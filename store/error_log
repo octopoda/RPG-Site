@@ -1,0 +1,9 @@
+[11-Aug-2013 17:43:53 America/Denver] PHP Notice:  Undefined property: ProductCategories::$summary in /home1/twosevtw/public_html/testing/lib/display.php on line 132
+[12-Aug-2013 10:58:30 America/Denver] PHP Notice:  Undefined property: Commerce::$testing in /home1/twosevtw/public_html/testing/plugins/lib/paypalcheckout.php on line 47
+[12-Aug-2013 10:58:30 America/Denver] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Id cannot be null' in /home1/twosevtw/public_html/testing/plugins/lib/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Sale.php:220
+Stack trace:
+#0 /home1/twosevtw/public_html/testing/plugins/lib/paypalcheckout.php(186): PayPal\Api\Sale->refund(Object(PayPal\Api\Refund), Object(PayPal\Rest\ApiContext))
+#1 /home1/twosevtw/public_html/testing/plugins/lib/orders.php(265): payPalCheckout->refundPayment('', '')
+#2 /home1/twosevtw/public_html/testing/store/paypal_Refund_Test.php(8): Orders->voidTransaction()
+#3 {main}
+  thrown in /home1/twosevtw/public_html/testing/plugins/lib/vendor/paypal/rest-api-sdk-php/lib/PayPal/Api/Sale.php on line 220

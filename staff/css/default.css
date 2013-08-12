@@ -1,0 +1,225 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+body, button, input, select, textarea { font-family: 'abel', helvetica, san-serif; color:#444;  }
+
+::-moz-selection { background: #fff000; color: #000; text-shadow: none; }
+::selection { background: #fff000; color: #000; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a {text-decoration:none}
+a:link, a:visited { color: #CB0202; }
+a:hover { color: #000; }
+a:focus { outline: thin dotted; }
+
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dl {clear:both; margin-bottom:50px; display:block; }
+dt {font-weight:bold; float:left; clear:left; margin:20px 0px 20px 0px; width:20%;}
+dd { margin: 20px 0 20px 20px; float:left; clear:right; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label {cursor:pointer; display:block; margin-bottom:4px; }
+legend { border: 0; *margin-left: -7px; padding: 0; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; *overflow: visible; padding:5px; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; margin-top:20px; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+fieldset p {clear:both; margin:10px 0;}
+fieldset p.textarea {margin-bottom:60px !important;}
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+legend {font-size:16px; color:#444;  padding-bottom:20px; }
+fieldset {margin-bottom:60px;}
+
+.checkbox label {float:left; text-align:left; width:300px; margin-left:-275px; margin-top:0px;}
+.checkbox input {float:left; }
+.checkbox {padding:20px 0px; clear:both;}
+
+form .ninjaSymbol {position:relative; top:-5px !important;}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+
+/* =============================================================================
+   Primary Styles
+   ========================================================================== */
+
+h3 {margin:10px 0px 20px 0px; font-size:30px; color:#999}
+h4 {margin:40px 0px 40px 0; font-size:18px; color:#444; clear:both; border-bottom:1px dashed #444; padding-top:80px;}
+
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.floatleft { float:left;}
+.floatRight {float:right;}
+.clearLeft {clear:left;}
+.clearRight {clear:right;}
+.clear {clear:both;}
+
+@charset "UTF-8";
+
+/* Black Ink Modal */
+.modal{position:absolute;background:#e6e4da;text-align:center;z-index:9999;display:none;border:1px solid black;padding:20px;text-align:center;-webkit-box-shadow:rgba(255,255,255,0.8) 0 0 250px;-moz-box-shadow:rgba(255,255,255,0.8) 0 0 250px;box-shadow:rgba(255,255,255,0.8) 0 0 250px;font-family:Helvetica,Arial,Sans-Serif}.modal.html{padding:0;margin:0}.modal.html .gridContainer{margin-top:-40px}.model.html .grid{text-align:left}.modal.html .text{margin-bottom:0}.modal .text{font-size:14px;font-weight:bold;margin-bottom:50px}.modal .text ul{margin:0;padding:0}.modal .text li{list-style:none;margin:0!important;width:100%}#mask{background-color:#444;z-index:999;position:absolute;top:0;left:0}.modal .close{font-family:'Ninja Symbols';cursor:pointer;font-size:30px;background-color:#FFF;height:30px;width:30px;border-radius:30px;color:#444;position:absolute;z-index:999}.modal.html .close{padding:0!important;margin:0!important}.modal .close:before{content:'*'}.modal .close:hover{color:#ac0202}.error.modal{background:#cb0202;color:#FFF}.error .button{margin:auto;width:90px;border-top:1px solid #f5f5f5;background:#b0adb0;background:-webkit-gradient(linear,left top,left bottom,from(#c9cccf),to(#b0adb0));background:-webkit-linear-gradient(top,#c9cccf,#b0adb0);background:-moz-linear-gradient(top,#c9cccf,#b0adb0);background:-ms-linear-gradient(top,#c9cccf,#b0adb0);background:-o-linear-gradient(top,#c9cccf,#b0adb0);padding:5px 10px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;-webkit-box-shadow:rgba(0,0,0,1) 0 1px 0;-moz-box-shadow:rgba(0,0,0,1) 0 1px 0;box-shadow:rgba(0,0,0,1) 0 1px 0;text-shadow:rgba(0,0,0,.4) 0 1px 0;color:#000;font-size:14px;text-decoration:none;vertical-align:middle}.error .button:hover{border-top-color:#404040;background:#404040;color:#ccc}.error .button:active{border-top-color:#242424;background:#242424}.message.modal{color:#FFF}.message{position:fixed;bottom:20px;right:20px;background:rgba(0,0,0,0.7);text-align:left;width:300px;border-radius:0 8px 0 8px}.message .text{margin:0;padding:0}.message .close{display:none}.modal .gridContainer{position:relative;top:40px}.modal .grid{text-align:left;margin-top:0}.modal .gridSearch input{background:#FFF}
+
+ /* Symbols */
+ @font-face{  font-family:'Ninja Symbols';  src:url('fonts/symbols.eot');  src:url('fonts/symbols.eot?iefix') format('eot'),    url('fonts/symbols.woff') format('woff'),    url('fonts/symbols.ttf') format('truetype'),    url('fonts/symbols.svg#NinjaSymbolsMonospaced') format('svg');  font-style:normal;  font-weight:normal}.ninjaSymbol{  font-family:'Ninja Symbols' !important;  cursor:pointer;  color:#878787}.ninjaSymbolAlert:before{  content:'!'}.ninjaSymbolArrowDown:before{  content:'"'}.ninjaSymbolArrowLeft:before{  content:'#'}.ninjaSymbolArrowRight:before{  content:'$'}.ninjaSymbolArrowUp:before{  content:'%'}.ninjaSymbolCalendar:before{  content:'&'}.ninjaSymbolCart:before{  content:"'"}.ninjaSymbolCheck:before{  content:'('}.ninjaSymbolCircle:before{  content:')'}.ninjaSymbolClear:before{  content:'*'}.ninjaSymbolClip:before{  content:'+'}.ninjaSymbolDiamond:before{  content:','}.ninjaSymbolDirections:before{  content:'-'}.ninjaSymbolEdit:before{  content:'.'}.ninjaSymbolFlag:before{  content:'/'}.ninjaSymbolGear:before{ content:'0'}.ninjaSymbolHeart:before{ content:'1'}.ninjaSymbolHeartPlus:before{ content:'2'}.ninjaSymbolHeartMinus:before{ content:'3'}.ninjaSymbolHelp:before{ content:'4'}.ninjaSymbolHome:before{ content:'5'}.ninjaSymbolInfo:before{ content:'6'}.ninjaSymbolInstall:before{ content:'7'}.ninjaSymbolLink:before{ content:'8'}.ninjaSymbolLock:before{ content:'9'}.ninjaSymbolMail:before{ content:':'}.ninjaSymbolMoveDown:before{ content:';'}.ninjaSymbolMoveLeft:before{ content:'<'}.ninjaSymbolMoveRight:before{ content:'='}.ninjaSymbolMoveUp:before{ content:'>'}.ninjaSymbolMinus:before{ content:'?'}.ninjaSymbolNot:before{ content:'@'}.ninjaSymbolOptions:before{ content:'A'}.ninjaSymbolPhoto:before{ content:'B'}.ninjaSymbolPin:before{ content:'C'}.ninjaSymbolPlus:before{ content:'D'}.ninjaSymbolPrint:before{ content:'E'}.ninjaSymbolRemove:before{ content:'F'}.ninjaSymbolSearch:before{ content:'G'}.ninjaSymbolShipping:before{ content:'H'}.ninjaSymbolStar:before{ content:'I'}.ninjaSymbolThought:before{ content:'J'}.ninjaSymbolThumbsDown:before{ content:'K'}.ninjaSymbolThumbsUp:before{ content:'L'}.ninjaSymbolTime:before{ content:'M'}.ninjaSymbolTriangle:before{ content:'N'}.ninjaSymbolUnlock:before{ content:'O'}.ninjaSymbolUser:before{ content:'P'}.ninjaSymbolUsers:before{ content:'Q'}.ninjaSymbolVideo:before{ content:'R'}.ninjaSymbolWatch:before{ content:'S'}.ninjaSymbolWeather:before{ content:'T'}
+
+
+ /* Brands */
+ @font-face{font-family:'Ninja Brands';src:url('fonts/brands.eot');src:url('fonts/brands.eot?iefix') format('eot'),url('fonts/brands.woff') format('woff'),url('fonts/brands.ttf') format('truetype'),url('fonts/brands.svg#NinjaBrandsMonospaced') format('svg');font-style:normal;font-weight:normal}.ninjaBrand{font-family:'Ninja Brands'}.ninjaBrandChrome:before{content:'!'}.ninjaBrandFirefox:before{content:'"'}.ninjaBrandFacebook:before{content:'#'}.ninjaBrandInternetExplorer:before{content:'$'}.ninjaBrandjQuery:before{content:'%'}.ninjaBrandMac:before{content:'&'}.ninjaBrandSafari:before{content:"'"}.ninjaBrandTwitter:before{content:'('}.ninjaBrandUbuntu:before{content:')'}.ninjaBrandWindows:before{content:'*'}
+
+/* ==|== media queries ======================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+
